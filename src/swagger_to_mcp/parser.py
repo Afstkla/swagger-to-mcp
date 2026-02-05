@@ -124,26 +124,31 @@ def make_tool_name(method: str, path: str, operation_id: str | None) -> str:
     else:
         resource_singular = resource
 
-    # Map method to action
+    # Map method to verb
     if method.lower() == "get":
-        action = f"get_{resource_singular}" if has_id else f"list_{resource}"
+        verb = "get" if has_id else "list"
     elif method.lower() == "post":
-        action = f"create_{resource_singular}"
+        verb = "create"
     elif method.lower() == "put":
-        action = f"replace_{resource_singular}"
+        verb = "replace"
     elif method.lower() == "patch":
-        action = f"update_{resource_singular}"
+        verb = "update"
     elif method.lower() == "delete":
-        action = f"delete_{resource_singular}"
+        verb = "delete"
     else:
-        action = f"{method.lower()}_{resource}"
+        verb = method.lower()
 
-    # Add parent context for nested resources
+    # Build name: verb_[parent_]resource
+    target = resource_singular if has_id else resource
     if len(segments) > 1:
         parent = segments[-2].replace("-", "_")
         # Avoid redundancy
-        if parent not in action and parent != resource:
-            action = f"{parent}_{action}"
+        if parent != resource:
+            action = f"{verb}_{parent}_{target}"
+        else:
+            action = f"{verb}_{target}"
+    else:
+        action = f"{verb}_{target}"
 
     # Clean up
     action = re.sub(r"_+", "_", action).strip("_")

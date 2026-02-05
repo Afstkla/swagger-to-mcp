@@ -289,14 +289,19 @@ class TestMakeToolName:
         assert name == "delete_user"
 
     def test_nested_resources_adds_parent_context(self) -> None:
-        """Test nested resources include parent context."""
+        """Test nested resources include parent context with verb first."""
         name = make_tool_name("GET", "/organizations/{org_id}/teams", None)
-        assert name == "organizations_list_teams"
+        assert name == "list_organizations_teams"
 
     def test_nested_item_resource(self) -> None:
         """Test nested item resources include parent and singularize."""
         name = make_tool_name("GET", "/organizations/{org_id}/teams/{team_id}", None)
-        assert name == "organizations_get_team"
+        assert name == "get_organizations_team"
+
+    def test_nested_resource_store_orders(self) -> None:
+        """Test /store/orders generates list_store_orders."""
+        name = make_tool_name("GET", "/store/orders", None)
+        assert name == "list_store_orders"
 
     def test_version_prefix_removal(self) -> None:
         """Test that version prefixes (/v1/, /v2/) are removed."""
@@ -309,7 +314,7 @@ class TestMakeToolName:
     def test_version_prefix_with_nested(self) -> None:
         """Test version prefix removal with nested resources."""
         name = make_tool_name("GET", "/v1/organizations/{org_id}/teams", None)
-        assert name == "organizations_list_teams"
+        assert name == "list_organizations_teams"
 
     def test_hyphenated_resources(self) -> None:
         """Test that hyphens are converted to underscores."""
