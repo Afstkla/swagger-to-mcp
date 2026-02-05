@@ -36,7 +36,7 @@ jobs:
           python-version: ${{ matrix.python }}
       - run: uv sync --group dev
       - run: uv run pytest --cov=openapi_to_mcp --cov-report=xml -v
-      - uses: codecov/codecov-action@v4
+      - uses: codecov/codecov-action@v5
         if: matrix.os == 'ubuntu-latest' && matrix.python == '3.13'
         with:
           files: ./coverage.xml
