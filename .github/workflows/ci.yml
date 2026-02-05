@@ -21,7 +21,6 @@ jobs:
       - run: uv run ruff format --check .
 
   test:
-    needs: lint
     strategy:
       fail-fast: false
       matrix:
@@ -35,7 +34,7 @@ jobs:
         with:
           python-version: ${{ matrix.python }}
       - run: uv sync --group dev
-      - run: uv run pytest --cov=openapi_to_mcp --cov-report=xml -v
+      - run: uv run pytest --cov=openapi_to_mcp --cov-report=xml -n auto
       - uses: codecov/codecov-action@v5
         if: matrix.os == 'ubuntu-latest' && matrix.python == '3.13'
         with:
