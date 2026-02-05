@@ -1,4 +1,4 @@
-"""CLI for swagger-to-mcp."""
+"""CLI for openapi-to-mcp."""
 
 import asyncio
 import json
@@ -237,7 +237,7 @@ def generate_config(
         "mcpServers": {
             server_name: {
                 "command": "uv",
-                "args": ["--directory", str(project_dir), "run", "swagger-to-mcp", *args],
+                "args": ["--directory", str(project_dir), "run", "openapi-to-mcp", *args],
             }
         }
     }

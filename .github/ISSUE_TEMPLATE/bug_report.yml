@@ -1,5 +1,5 @@
 name: Bug Report
-description: Report a bug with swagger-to-mcp
+description: Report a bug with openapi-to-mcp
 title: "[Bug]: "
 labels: ["bug"]
 body:
@@ -45,7 +45,7 @@ body:
     attributes:
       label: Command Used
       description: The exact command you ran that caused the issue.
-      placeholder: uvx swagger-to-mcp serve ./spec.json --base-url https://api.example.com
+      placeholder: uvx openapi-to-mcp serve ./spec.json --base-url https://api.example.com
       render: shell
     validations:
       required: true
@@ -74,10 +74,10 @@ body:
       required: true
 
   - type: input
-    id: swagger-to-mcp-version
+    id: openapi-to-mcp-version
     attributes:
-      label: swagger-to-mcp Version
-      description: Run `uvx swagger-to-mcp --version` or check your installed version.
+      label: openapi-to-mcp Version
+      description: Run `uvx openapi-to-mcp --version` or check your installed version.
       placeholder: "0.1.0"
     validations:
       required: true

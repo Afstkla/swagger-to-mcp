@@ -1,6 +1,6 @@
-# Contributing to swagger-to-mcp
+# Contributing to openapi-to-mcp
 
-Thank you for your interest in contributing to swagger-to-mcp! This document provides guidelines and instructions for contributing.
+Thank you for your interest in contributing to openapi-to-mcp! This document provides guidelines and instructions for contributing.
 
 ## Development Setup
 
@@ -14,8 +14,8 @@ Thank you for your interest in contributing to swagger-to-mcp! This document pro
 1. **Clone the repository:**
 
    ```bash
-   git clone https://github.com/afstkla/swagger-to-mcp.git
-   cd swagger-to-mcp
+   git clone https://github.com/afstkla/openapi-to-mcp.git
+   cd openapi-to-mcp
    ```
 
 2. **Install dependencies with uv:**
@@ -29,7 +29,7 @@ Thank you for your interest in contributing to swagger-to-mcp! This document pro
 3. **Verify your setup:**
 
    ```bash
-   uv run swagger-to-mcp --help
+   uv run openapi-to-mcp --help
    ```
 
 ## Running Tests
@@ -41,7 +41,7 @@ We use pytest for testing. Run the test suite with:
 uv run pytest
 
 # Run with coverage report
-uv run pytest --cov=src/swagger_to_mcp --cov-report=term-missing
+uv run pytest --cov=src/openapi_to_mcp --cov-report=term-missing
 
 # Run a specific test file
 uv run pytest tests/test_parser.py
@@ -145,7 +145,7 @@ When reporting bugs, you **must include**:
 
 4. **Version information:**
    - Python version
-   - swagger-to-mcp version (`uvx swagger-to-mcp --version`)
+   - openapi-to-mcp version (`uvx openapi-to-mcp --version`)
 
 Without the OpenAPI spec, we cannot reproduce or fix the issue.
 
@@ -169,7 +169,7 @@ webhooks:
 
 **Command:**
 ```bash
-uvx swagger-to-mcp list-endpoints ./spec.yaml
+uvx openapi-to-mcp list-endpoints ./spec.yaml
 ```
 
 **Error:**
@@ -177,14 +177,14 @@ uvx swagger-to-mcp list-endpoints ./spec.yaml
 KeyError: 'paths'
 ```
 
-**Versions:** Python 3.12, swagger-to-mcp 0.1.0
+**Versions:** Python 3.12, openapi-to-mcp 0.1.0
 ```
 
 ## Project Structure
 
 ```
-swagger-to-mcp/
-├── src/swagger_to_mcp/
+openapi-to-mcp/
+├── src/openapi_to_mcp/
 │   ├── __init__.py
 │   ├── cli.py          # Command-line interface
 │   ├── parser.py       # OpenAPI spec parsing
@@ -200,9 +200,9 @@ swagger-to-mcp/
 
 ## Getting Help
 
-- **Questions:** Open a [Discussion](https://github.com/afstkla/swagger-to-mcp/discussions)
-- **Bugs:** Open an [Issue](https://github.com/afstkla/swagger-to-mcp/issues) (with your spec!)
-- **Features:** Open an [Issue](https://github.com/afstkla/swagger-to-mcp/issues) with the feature request template
+- **Questions:** Open a [Discussion](https://github.com/afstkla/openapi-to-mcp/discussions)
+- **Bugs:** Open an [Issue](https://github.com/afstkla/openapi-to-mcp/issues) (with your spec!)
+- **Features:** Open an [Issue](https://github.com/afstkla/openapi-to-mcp/issues) with the feature request template
 
 ## License
 

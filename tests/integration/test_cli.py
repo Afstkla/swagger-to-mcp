@@ -9,8 +9,8 @@ import pytest
 import yaml
 from click.testing import CliRunner
 
-from swagger_to_mcp.auth import AuthType
-from swagger_to_mcp.cli import main
+from openapi_to_mcp.auth import AuthType
+from openapi_to_mcp.cli import main
 
 
 @pytest.fixture
@@ -40,7 +40,7 @@ class TestServeCommand:
 
     def test_serve_command_calls_run_server(self, cli_runner: CliRunner, petstore_spec_file: str):
         """Test that serve command invokes run_server with correct args."""
-        with patch("swagger_to_mcp.cli.asyncio.run") as mock_run:
+        with patch("openapi_to_mcp.cli.asyncio.run") as mock_run:
             result = cli_runner.invoke(
                 main,
                 [
@@ -56,7 +56,7 @@ class TestServeCommand:
 
     def test_serve_command_with_basic_auth(self, cli_runner: CliRunner, petstore_spec_file: str):
         """Test serve command with basic authentication options."""
-        with patch("swagger_to_mcp.cli.asyncio.run") as mock_run:
+        with patch("openapi_to_mcp.cli.asyncio.run") as mock_run:
             result = cli_runner.invoke(
                 main,
                 [
@@ -78,7 +78,7 @@ class TestServeCommand:
 
     def test_serve_command_with_bearer_auth(self, cli_runner: CliRunner, petstore_spec_file: str):
         """Test serve command with bearer token authentication."""
-        with patch("swagger_to_mcp.cli.asyncio.run") as mock_run:
+        with patch("openapi_to_mcp.cli.asyncio.run") as mock_run:
             result = cli_runner.invoke(
                 main,
                 [
@@ -100,7 +100,7 @@ class TestServeCommand:
         self, cli_runner: CliRunner, petstore_spec_file: str
     ):
         """Test serve command with API key header authentication."""
-        with patch("swagger_to_mcp.cli.asyncio.run") as mock_run:
+        with patch("openapi_to_mcp.cli.asyncio.run") as mock_run:
             result = cli_runner.invoke(
                 main,
                 [
@@ -124,7 +124,7 @@ class TestServeCommand:
         self, cli_runner: CliRunner, petstore_spec_file: str
     ):
         """Test serve command with OAuth2 password flow."""
-        with patch("swagger_to_mcp.cli.asyncio.run") as mock_run:
+        with patch("openapi_to_mcp.cli.asyncio.run") as mock_run:
             result = cli_runner.invoke(
                 main,
                 [
@@ -152,7 +152,7 @@ class TestServeCommand:
         self, cli_runner: CliRunner, petstore_spec_file: str
     ):
         """Test serve command with OAuth2 client credentials flow."""
-        with patch("swagger_to_mcp.cli.asyncio.run") as mock_run:
+        with patch("openapi_to_mcp.cli.asyncio.run") as mock_run:
             result = cli_runner.invoke(
                 main,
                 [
@@ -176,7 +176,7 @@ class TestServeCommand:
 
     def test_serve_command_with_tag_filters(self, cli_runner: CliRunner, petstore_spec_file: str):
         """Test serve command with include and exclude tag filters."""
-        with patch("swagger_to_mcp.cli.asyncio.run") as mock_run:
+        with patch("openapi_to_mcp.cli.asyncio.run") as mock_run:
             result = cli_runner.invoke(
                 main,
                 [
@@ -516,7 +516,7 @@ class TestAuthTypeMapping:
         expected_enum: AuthType,
     ):
         """Test that CLI auth type strings map to correct AuthType enums."""
-        with patch("swagger_to_mcp.cli.asyncio.run"):
+        with patch("openapi_to_mcp.cli.asyncio.run"):
             result = cli_runner.invoke(
                 main,
                 [
@@ -550,7 +550,7 @@ class TestAuthTypeMapping:
 
     def test_auth_type_case_insensitive(self, cli_runner: CliRunner, petstore_spec_file: str):
         """Test that auth type is case insensitive."""
-        with patch("swagger_to_mcp.cli.asyncio.run"):
+        with patch("openapi_to_mcp.cli.asyncio.run"):
             result = cli_runner.invoke(
                 main,
                 [

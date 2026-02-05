@@ -9,8 +9,8 @@ import pytest
 import yaml
 from pytest_httpx import HTTPXMock
 
-from swagger_to_mcp.auth import AuthConfig, AuthenticatedClient, AuthType
-from swagger_to_mcp.server import SwaggerMCPServer
+from openapi_to_mcp.auth import AuthConfig, AuthenticatedClient, AuthType
+from openapi_to_mcp.server import SwaggerMCPServer
 
 
 @pytest.fixture

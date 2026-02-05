@@ -6,7 +6,7 @@ from pathlib import Path
 import httpx
 import pytest
 
-from swagger_to_mcp.parser import (
+from openapi_to_mcp.parser import (
     extract_endpoints,
     load_spec,
     make_tool_name,

@@ -1,5 +1,5 @@
 name: Feature Request
-description: Suggest a new feature or enhancement for swagger-to-mcp
+description: Suggest a new feature or enhancement for openapi-to-mcp
 title: "[Feature]: "
 labels: ["enhancement"]
 body:
@@ -22,7 +22,7 @@ body:
     attributes:
       label: Proposed Solution
       description: Describe the solution you'd like to see.
-      placeholder: I would like swagger-to-mcp to...
+      placeholder: I would like openapi-to-mcp to...
     validations:
       required: true
 

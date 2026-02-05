@@ -2,7 +2,7 @@
 
 import pytest
 
-from swagger_to_mcp.generator import (
+from openapi_to_mcp.generator import (
     build_tool_input_schema,
     generate_tool_definitions,
     openapi_type_to_json_schema,

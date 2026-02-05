@@ -1,1 +1,1 @@
-"""Test fixtures for swagger-to-mcp."""
+"""Test fixtures for openapi-to-mcp."""

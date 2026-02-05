@@ -3,7 +3,7 @@
 import pytest
 from pytest_httpx import HTTPXMock
 
-from swagger_to_mcp.auth import (
+from openapi_to_mcp.auth import (
     AuthConfig,
     AuthenticatedClient,
     AuthenticationError,

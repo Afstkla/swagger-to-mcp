@@ -1,1 +1,1 @@
-"""Integration tests for swagger-to-mcp."""
+"""Integration tests for openapi-to-mcp."""

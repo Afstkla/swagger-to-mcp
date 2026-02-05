@@ -1,4 +1,4 @@
-"""Shared pytest fixtures for swagger-to-mcp tests."""
+"""Shared pytest fixtures for openapi-to-mcp tests."""
 
 from pathlib import Path
 from typing import Any
@@ -6,7 +6,7 @@ from typing import Any
 import pytest
 import yaml
 
-from swagger_to_mcp.auth import AuthConfig, AuthType
+from openapi_to_mcp.auth import AuthConfig, AuthType
 
 FIXTURES_DIR = Path(__file__).parent / "fixtures" / "specs"
 
